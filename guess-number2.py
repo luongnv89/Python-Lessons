@@ -1,6 +1,5 @@
 import random
-print("\n\n")
-print("***** GUESS NUMBER GAME ****")
+print("\n***** GUESS NUMBER GAME ****")
 print("What is your name?")
 playerName = input()
 print("----> Welcome "+str(playerName)+" to guess number game <-----\n\n")
@@ -12,10 +11,12 @@ min = int(min)
 print("Highest bound (Maximum):")
 max = input()
 max = int(max)
-print("So your number is between "+str(min)+" and "+str(max)+".\n Now I am going to give you my guessed number.\n Please let's me know if it bigger or smaller than your number.")
-correct = False
+print("How many times can I guess?")
+nbMax = input()
+nbMax = int(nbMax)
+print("So your number is between "+str(min)+" and "+str(max)+".\nNow I am going to give you my guessed number.\nPlease let's me know if it bigger or smaller than your number.")
 nbTimes = 0
-while correct==False:
+while nbTimes<nbMax:
 	nbTimes = nbTimes + 1
 	guessedNb = random.randint(min,max)
 	print("Is "+str(guessedNb)+" your number? 1-yes or 0-no ")
@@ -23,7 +24,7 @@ while correct==False:
 	userChoose = int(userChoose)
 	if userChoose == 1:
 		print("So I have your number after "+str(nbTimes)+" times of guessing\n")
-		correct = True
+		break
 	if userChoose == 0:	
 		print("Is "+str(guessedNb)+" bigger (1) or smaller(0) than your number?")
 		userChoose2 = input()
@@ -32,6 +33,10 @@ while correct==False:
 				max = guessedNb-1
 		if userChoose2 == 0:
 				min = guessedNb+1
+if nbTimes<nbMax:
+	print("I won! .... ")
+else:
+	print("Sorry I could not guess your number in "+str(nbMax)+" times of guessing")
 print("Thank you for your time. See you again ...")
 		
 
