@@ -1,0 +1,21 @@
+import math
+def isPrime(nb):
+	print("Number to check: %d"%(nb))
+	if nb == 1 or nb == 2:
+		return True
+	start = 2
+	max = nb
+	while start > max:
+		print("start: %d, max: %s"%(start,max) )
+		if (nb % start) == 0:
+			return False
+		else:
+			start = start +1
+			max = math.ceil(nb / start)
+	if( nb % start) == 0:
+		return False
+	else:
+		return True
+print(isPrime(15))
+print(isPrime(17))
+print(isPrime(95))
