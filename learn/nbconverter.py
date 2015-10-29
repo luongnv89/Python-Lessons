@@ -80,7 +80,7 @@ def xtod(n_x,x,get_x):
 				print("ERROR: Cannot find convert function")
 				return None
 			nb = get_x(c)
-			if(nb==0):
+			if(nb==None):
 				return None
 			else:
 				ret += nb * pow(x,len_x-1)

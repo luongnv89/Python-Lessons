@@ -32,3 +32,5 @@ if __name__=="__main__":
 	print(binary_to_str("1111011 1100011 1101010 1111011 1011101"))
 	print(hexa_to_str("AB B1 F4 5D 7C 8E"))
 	print(decimal_to_str("100 98 49 22 230"))
+	print(hexa_to_str("7A 70"))
+	
